@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('-u', '--username', help="the e621 username for the user favorites you want to download", nargs=1, type=str, required=True)
 parser.add_argument('--no-overwrite', help="only works on UNIX/LINUX; downloaded files are saved under a seperate name if the filename already exists", action="store_true")
-parser.add_argument('-p', '--path', help="specify path for downloads; default is current directory'", nargs=?, const=".", type=str)
+parser.add_argument('-p', '--path', help="specify path for downloads; default is current directory'", nargs='?', const=".", type=str)
 
 # Something something... globals bad... something - eh, it's a tiny script so oh well
 # Leaving these just in case you just wanna hard-code these values for convenience
