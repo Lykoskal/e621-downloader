@@ -54,7 +54,7 @@ def downloadFavorites(user_id):
 
     # Must specify user-agent for commands, else they may fail with a 403
     wget_header = "--header=User-Agent: Lykoskal's e621-fav-downloader in use by " +  username
-    webreq_header = "Lykoskal's-e621-fav-downloader-in-use-by-" + username 
+    webreq_header = "e621-fav-downloader-in-use-by-" + username 
 
     for i in range(len(resjson["posts"]) - 1):
         try:
@@ -67,7 +67,6 @@ def downloadFavorites(user_id):
                     p = subprocess.Popen(['wget', wget_header, image_url, "-P", path + "/"])
                 else:
                     p = subprocess.Popen(['wget', wget_header, image_url, "-P", path + image_name])
-                    print(path + image_name)
             else:
                 if no_overwrite == True:
                     print("You've selected no-override. Unfortunately, my Windows cmd skillz are weak, so it probably won't work.")
