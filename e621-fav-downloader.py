@@ -54,7 +54,7 @@ def downloadFavorites(user_id):
 
     # Must specify user-agent for commands, else they may fail with a 403
     wget_header = "--header=User-Agent: Lykoskal's e621-fav-downloader in use by " +  username
-    webreq_header = "e621-fav-downloader-in-use-by-" + username 
+    curl_header = "e621-fav-downloader-in-use-by-" + username 
 
     for i in range(len(resjson["posts"]) - 1):
         try:
@@ -64,14 +64,14 @@ def downloadFavorites(user_id):
                 image_name = image_name[len(image_name) - 1]
                 
                 if no_overwrite == True:
-                    p = subprocess.Popen(['wget', wget_header, image_url, "-P", path + "/"])
+                    subprocess.Popen(['wget', wget_header, image_url, "-P", path + "/"])
                 else:
-                    p = subprocess.Popen(['wget', wget_header, image_url, "-P", path + image_name])
+                    subprocess.Popen(['wget', wget_header, image_url, "-P", path + image_name])
             else:
                 if no_overwrite == True:
                     print("You've selected no-override. Unfortunately, my Windows cmd skillz are weak, so it probably won't work.")
                     user_in = input("Would you like to continue anyway? [y/n]: ")
-                    if user_in == [yY]:
+                    if user_in == ['yY']:
                         continue
                     else:
                         print('Aborted...')
@@ -79,7 +79,7 @@ def downloadFavorites(user_id):
 
                 image_name = image_url.split('/')
                 image_name = image_name[len(image_name) - 1]
-                p = subprocess.Popen(['curl', '-UserAgent', webreq_header, image_url, "-O", path + image_name])
+                subprocess.Popen(['curl', '-A', curl_header, "--url", image_url, "--output", image_name])
 
             # Remember to be polite and patient, or else they might not let you in anymore
             sleep(3)
