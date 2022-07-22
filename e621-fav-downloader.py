@@ -12,14 +12,17 @@ import os
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-u', '--username', help="the e621 username for the user favorites you want to download", nargs=1, type=str, required=True)
-parser.add_argument('--no-overwrite', help="only works on UNIX/LINUX; downloaded files are saved under a seperate name if the filename already exists", action="store_true")
-parser.add_argument('-p', '--path', help="specify path for downloads; default is current directory'", nargs='?', const=".", type=str)
+parser.add_argument('--no_overwrite', help="only works on UNIX/LINUX; downloaded files are saved under a seperate name if the filename already exists", action="store_true")
+parser.add_argument('-p', '--path', help="specify path for downloads; default is current directory'", nargs='?', default="./downloaded_favorites", type=str)
+
+args = parser.parse_args()
 
 # Something something... globals bad... something - eh, it's a tiny script so oh well
 # Leaving these just in case you just wanna hard-code these values for convenience
-username = args.username
-path = args.path
-no-overwrite = args.no-overwrite
+username = str(args.username).strip("[]'")
+path = str(args.path).strip("[]'")
+path = path.rstrip('/') + '/'
+no_overwrite = args.no_overwrite
 user_agent = {'user-agent':"Lykoskal's e621-fav-downloader in use by " +  username}
 
 def sendRequest(url):
@@ -60,12 +63,13 @@ def downloadFavorites(user_id):
                 image_name = image_url.split('/')
                 image_name = image_name[len(image_name) - 1]
                 
-                if no-overwrite == True:
-                    p = subprocess.Popen(['wget', wget_header, image_url, "-P", path])
+                if no_overwrite == True:
+                    p = subprocess.Popen(['wget', wget_header, image_url, "-P", path + "/"])
                 else:
-                    p = subprocess.Popen(['wget', wget_header, image_url, "-O", path + image_name])
+                    p = subprocess.Popen(['wget', wget_header, image_url, "-P", path + image_name])
+                    print(path + image_name)
             else:
-                if no-overwrite == True:
+                if no_overwrite == True:
                     print("You've selected no-override. Unfortunately, my Windows cmd skillz are weak, so it probably won't work.")
                     user_in = input("Would you like to continue anyway? [y/n]: ")
                     if user_in == [yY]:
@@ -76,7 +80,7 @@ def downloadFavorites(user_id):
 
                 image_name = image_url.split('/')
                 image_name = image_name[len(image_name) - 1]
-                p = subprocess.Popen(['Invoke-WebRequest', '-UserAgent', webreq_header, image_url, "-O", path.rstrip('/') + "/" + image_name])
+                p = subprocess.Popen(['Invoke-WebRequest', '-UserAgent', webreq_header, image_url, "-O", path + image_name])
 
             # Remember to be polite and patient, or else they might not let you in anymore
             sleep(3)
