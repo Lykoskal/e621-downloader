@@ -80,7 +80,7 @@ def downloadFavorites(user_id):
 
                 image_name = image_url.split('/')
                 image_name = image_name[len(image_name) - 1]
-                p = subprocess.Popen(['Invoke-WebRequest', '-UserAgent', webreq_header, image_url, "-O", path + image_name])
+                p = subprocess.Popen(['curl', '-UserAgent', webreq_header, image_url, "-O", path + image_name])
 
             # Remember to be polite and patient, or else they might not let you in anymore
             sleep(3)
