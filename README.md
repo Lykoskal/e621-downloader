@@ -70,7 +70,7 @@ As such make sure to run e621-download.py *inside the directory you want the ima
 
 ---
 
-#### Other tidbits:
+### Other tidbits:
 
 Be sure you're in the same directory as e621-downloader.py, or call it with it's path like `python3 file/path_to/e621-downloader.py`
 
