@@ -25,6 +25,8 @@ path = str(args.path).strip("[]'")
 
 if args.query:
     query = str(args.query).strip("[]'")
+    query = query.replace(' ', '+')
+    print(query)
 
 # Need full path; add 
 path = path.rstrip('/') + '/'
@@ -54,10 +56,13 @@ def getUserID(username):
     return str(user_id)
 
 def downloadPosts(query_string):
+    if not os.path.exists(path):
+        os.mkdir(path)
+
     while True:
         page_num = 1
         if args.query:
-            url = ("https://e621.net/posts?page=" + str(page_num) + "&tags=" + query_string)
+            url = ("https://e621.net/posts.json?page=" + str(page_num) + "&tags=" + query_string)
         else:
             url = ("https://e621.net/favorites.json?page=" + str(page_num) + "&user_id=" + query_string)
         response = sendRequest(url)
