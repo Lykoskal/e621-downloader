@@ -99,7 +99,7 @@ def downloadPosts(query_string):
 
                     image_name = image_url.split('/')
                     image_name = image_name[len(image_name) - 1]
-                    subprocess.Popen(['curl', '-A', curl_header, image_url, '>'  path + image_name])
+                    subprocess.Popen(['curl', '-A', curl_header, image_url, '>',  path + image_name])
 
                 # Remember to be polite and patient, or else they might not let you in anymore
                 sleep(3.5)
