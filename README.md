@@ -10,7 +10,9 @@ Alternatively, the script can take a string and use that to search e621 for post
 
 #### Curl to download just the script: 
 
-`curl https://raw.githubusercontent.com/Lykoskal/e621-downloader/main/e621-downloader.py -O e621-downloader.py`
+```
+curl https://raw.githubusercontent.com/Lykoskal/e621-downloader/main/e621-downloader.py -O e621-downloader.py
+```
 
 ### Linux/Unix:
 On Linux/Unix systems, simply download `e621-downloads.py` in whatever manner you choose. Chances are that the necessary packages will be installed on your system already. If not, `sudo apt-get install <package-name>` has a good chance of taking care of it; Google is there if not.
@@ -30,7 +32,9 @@ Should help... hopefully. You might also need to install Python3 or greater (can
 
 ## Usage
 
-#### `python3 e621-downloader.py -u <username> -q <search_parameters> -p <PATH> --no_overwrite`
+```
+python3 e621-downloader.py -u <username> -q <search_parameters> -p <PATH> --no_overwrite
+```
 
 `-u, --username` &nbsp;&nbsp;&nbsp;&nbsp; Required - either your username, or the username of the user who's favorites you want to download
 
@@ -46,15 +50,21 @@ Should help... hopefully. You might also need to install Python3 or greater (can
 
 Downloading your favorites with default path (creates new folder in current directory):
 
-`python3 e621-downloader.py -u your_username_here`
+```
+python3 e621-downloader.py -u your_username_here
+```
 
 Downloading your favorited posts to a folder called 'degen_hour' on your desktop, also with no overwriting:
 
-`python3 e621-downloader.py -u your_username_here -p ~/Desktop/degen_hour --overwrite`
+```
+python3 e621-downloader.py -u your_username_here -p ~/Desktop/degen_hour --overwrite
+```
 
 Downloading all posts tagged 'chunie' and 'solo' but not 'cervid':
 
-`python3 e621-downloader.py -u your_username_here -q "chunie solo -cervid"`
+```
+python3 e621-downloader.py -u your_username_here -q "chunie solo -cervid"
+```
 
 ---
 
@@ -62,7 +72,9 @@ Downloading all posts tagged 'chunie' and 'solo' but not 'cervid':
 
 Downloading your favorites to the current working directory while e621-downloader.py is in the previous directory:
 
-`python3.10.exe ..\e621-downloader.py -u your_username_here`
+```
+python3.10.exe ..\e621-downloader.py -u your_username_here
+```
 
 #### *Caveats on Windows*:
 Since Windows doesn't have wget by default and curl doesn't seem to work nicely with saving files inside directories, it unfortunately doesn't work with the optional path argument that determines where files are saved.
