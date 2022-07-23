@@ -45,7 +45,7 @@ def sendRequest(url):
 def getUserID(username):
     url = ('https://e621.net/users/' + username + '.json')
     response = sendRequest(url)
-    sleep(2)
+    sleep(1)
 
     try:
         user_id = response.json()["id"]
@@ -59,8 +59,9 @@ def downloadPosts(query_string):
     if not os.path.exists(path):
         os.mkdir(path)
 
+    page_num = 1
+
     while True:
-        page_num = 1
         if args.query:
             url = ("https://e621.net/posts.json?page=" + str(page_num) + "&tags=" + query_string)
         else:
@@ -69,7 +70,7 @@ def downloadPosts(query_string):
         resjson = response.json()
         
         # Check if no more posts available for download
-        if !len(resjson["posts"]):
+        if not resjson["posts"]:
             break
 
         # Must specify user-agent for commands, else they may fail with a 403
@@ -100,7 +101,7 @@ def downloadPosts(query_string):
                     subprocess.Popen(['curl', '-A', curl_header, image_url, '-O'])
 
                 # Remember to be polite and patient, or else they might not let you in anymore
-                sleep(3.5)
+                sleep(3)
 
             except KeyError:
                 print("Something has gone and done a fucky-wucky OwO, I guess...")
