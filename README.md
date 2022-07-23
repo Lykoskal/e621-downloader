@@ -75,3 +75,5 @@ As such make sure to run e621-download.py *inside the directory you want the ima
 Be sure you're in the same directory as e621-downloader.py, or call it with it's path like `python3 file/path_to/e621-downloader.py`
 
 If using WSL, the path to places like Desktop is probably `/mnt/c/Users/YourName/Desktop`
+
+Also, I don't know this for certain, but modifying your favorites while the script is running might cus some... shenanigans
