@@ -40,7 +40,7 @@ python3 e621-downloader.py -u <username> -q <search_parameters> -p <PATH> --no_o
 
 `-q, --query` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Optional - using this option will search posts rather than get the user's favorites, format similar to how you would search using e621 tags
 
-`-p, --path` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Optional - Linux/Unix and WSL only; specify where to download the files using the **full** file path; will default to creating a file in the current working directory if not specified
+`-p, --path` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Optional - Linux/Unix and WSL only; specify where to download the files using the file path; will default to creating a file in the current working directory if not specified
 
 `--no_overwrite` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Optional - Linux/Unix/WSL only; files with duplicate names will be saved under a different name
 
