@@ -1,4 +1,4 @@
-# e621-downloader (WIP)
+# e621-downloader
 Downloads your favorite things from that umami NSFW furry art site << uwu;
 
 By default, the script will take a e621 username and download the image/video from that user's favorited posts.
