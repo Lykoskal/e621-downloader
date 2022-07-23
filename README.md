@@ -7,11 +7,16 @@ Alternatively, the script can take a string and use that to search e621 for post
 **Note - this script has been slowed down considerably to avoid hitting any request limits, remove or modify the sleep() usage if you wish, but be cognizant the frequency/volume of your requests.*
 
 ## Set Up
+
+#### Curl to download just the script: 
+
+`curl https://raw.githubusercontent.com/Lykoskal/e621-downloader/main/e621-downloader.py -O e621-downloader.py`
+
 ### Linux/Unix:
 On Linux/Unix systems, simply download `e621-downloads.py` in whatever manner you choose. Chances are that the necessary packages will be installed on your system already. If not, `sudo apt-get install <package-name>` has a good chance of taking care of it; Google is there if not.
 
 ### Windows:
-I highly recommend using Windows Subsystem for Linux (WSL) if you want full funcitonality. Consider looking on the Microsoft Store for your preferred Linux flavor (Ubuntu is a common choice).
+I *highly recommend* using Windows Subsystem for Linux (WSL) if you want full functionality, as running on Command Prompt or PowerShell removes two options (see [Caveats](https://github.com/Lykoskal/e621-downloader/edit/main/README.md#caveats-on-windows)). Consider looking on the Microsoft Store for your preferred Linux flavor (Ubuntu is a common choice).
 
 Regardless, download the `e621-downloads.py` file.
 
@@ -39,6 +44,10 @@ Should help... hopefully. You might also need to install Python3 or greater (can
 
 ### Linux/Unix (and WSL ofc) Examples:
 
+Downloading your favorites with default path (creates new folder in current directory):
+
+`python3 e621-downloader.py -u your_username_here`
+
 Downloading your favorited posts to a folder called 'degen_hour' on your desktop, also with no overwriting:
 
 `python3 e621-downloader.py -u your_username_here -p ~/Desktop/degen_hour --overwrite`
@@ -51,9 +60,9 @@ Downloading all posts tagged 'chunie' and 'solo' but not 'cervid':
 
 ### Windows Example:
 
-Downloading your favorites to the current working directory:
+Downloading your favorites to the current working directory while e621-downloader.py is in the previous directory:
 
-`python3.10.exe e621-downloader.py -u your_username_here`
+`python3.10.exe ..\e621-downloader.py -u your_username_here`
 
 #### *Caveats on Windows*:
 Since Windows doesn't have wget by default and curl doesn't seem to work nicely with saving files inside directories, it unfortunately doesn't work with the optional path argument that determines where files are saved.
@@ -66,5 +75,3 @@ As such make sure to run e621-download.py *inside the directory you want the ima
 Be sure you're in the same directory as e621-downloader.py, or call it with it's path like `python3 file/path_to/e621-downloader.py`
 
 If using WSL, the path to places like Desktop is probably `/mnt/c/Users/YourName/Desktop`
-
-
