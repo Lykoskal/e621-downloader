@@ -80,6 +80,8 @@ def downloadPosts(query_string):
         for i in range(len(resjson["posts"]) - 1):
             try:
                 image_url = resjson["posts"][i]["file"]["url"]
+                if image_url == None:
+                    continue
                 if os.name != 'nt':
                     image_name = image_url.split('/')
                     image_name = image_name[len(image_name) - 1]
