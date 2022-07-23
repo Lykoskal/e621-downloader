@@ -19,6 +19,7 @@ parser.add_argument('-p', '--path', help="specify full path for downloads; defau
 args = parser.parse_args()
 
 # Something something... globals bad... something - eh, it's a tiny script so oh well
+# Leaving these just in case you just wanna hard-code these values for convenience
 username = str(args.username).strip("[]'")
 path = str(args.path).strip("[]'")
 
@@ -44,7 +45,7 @@ def sendRequest(url):
 def getUserID(username):
     url = ('https://e621.net/users/' + username + '.json')
     response = sendRequest(url)
-    sleep(1)
+    sleep(2)
 
     try:
         user_id = response.json()["id"]
@@ -68,7 +69,7 @@ def downloadPosts(query_string):
         resjson = response.json()
         
         # Check if no more posts available for download
-        if len(resjson["posts"]) < 1:
+        if !len(resjson["posts"]):
             break
 
         # Must specify user-agent for commands, else they may fail with a 403
@@ -99,7 +100,7 @@ def downloadPosts(query_string):
                     subprocess.Popen(['curl', '-A', curl_header, image_url, '-O'])
 
                 # Remember to be polite and patient, or else they might not let you in anymore
-                sleep(3)
+                sleep(3.5)
 
             except KeyError:
                 print("Something has gone and done a fucky-wucky OwO, I guess...")
