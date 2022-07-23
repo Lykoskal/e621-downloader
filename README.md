@@ -18,7 +18,7 @@ curl https://raw.githubusercontent.com/Lykoskal/e621-downloader/main/e621-downlo
 On Linux/Unix systems, simply download `e621-downloads.py` in whatever manner you choose. Chances are that the necessary packages will be installed on your system already. If not, `sudo apt-get install <package-name>` has a good chance of taking care of it; Google is there if not.
 
 ### Windows:
-I *highly recommend* using Windows Subsystem for Linux (WSL) if you want full functionality, as running on Command Prompt or PowerShell removes two options (see [Caveats](https://github.com/Lykoskal/e621-downloader/edit/main/README.md#caveats-on-windows)). Consider looking on the Microsoft Store for your preferred Linux flavor (Ubuntu is a common choice).
+I *highly recommend* using Windows Subsystem for Linux (WSL) if you want full functionality, as running on Command Prompt or PowerShell removes two options (see [Caveats](https://github.com/Lykoskal/e621-downloader/edit/main/README.md#caveats-on-windows)). Consider looking on the Microsoft Store for your preferred Linux flavor (Ubuntu is a common choice). If you do use this, refer to the Linux/Unix usage section for usage examples.
 
 Regardless, download the `e621-downloads.py` file.
 
@@ -46,7 +46,7 @@ python3 e621-downloader.py -u <username> -q <search_parameters> -p <PATH> --no_o
 
 ---
 
-### Linux/Unix (and WSL ofc) Examples:
+### Linux/Unix Examples:
 
 Downloading your favorites with default path (creates new folder in current directory):
 
