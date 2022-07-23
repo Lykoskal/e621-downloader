@@ -24,8 +24,9 @@ username = str(args.username).strip("[]'")
 path = str(args.path).strip("[]'")
 
 if args.query:
+    # Clean and parse query string for use in url
     query = str(args.query).strip("[]'")
-    query = query.replace(' ', '+')
+    query = query.replace(' ', '+'); query = query.replace(':', '%3A')
     print(query)
 
 # Need full path; add 
@@ -120,7 +121,7 @@ def main():
 
     downloadPosts(query_string)
 
-    print("\nAll done. Enjoy your yiff my fellow homosex- I mean furries!")
+    print("\nAll done. Enjoy :3")
     return 0
 
 if __name__ == '__main__':
