@@ -45,7 +45,7 @@ def sendRequest(url):
 def getUserID(username):
     url = ('https://e621.net/users/' + username + '.json')
     response = sendRequest(url)
-    sleep(2)
+    sleep(1)
 
     try:
         user_id = response.json()["id"]
@@ -100,7 +100,7 @@ def downloadPosts(query_string):
                     subprocess.Popen(['curl', '-A', curl_header, image_url, '-O'])
 
                 # Remember to be polite and patient, or else they might not let you in anymore
-                sleep(3.5)
+                sleep(3)
 
             except KeyError:
                 print("Something has gone and done a fucky-wucky OwO, I guess...")
