@@ -4,7 +4,7 @@ Downloads your favorite things from that umami NSFW furry art site << uwu;
 By default, the script will take a e621 username and download the image/video from that user's favorited posts.
 Alternatively, the script can take a string and use that to search e621 for posts. See the [Usage](https://github.com/Lykoskal/e621-downloader/edit/main/README.md#usage) section below for details and examples.
 
-**Note - this script has been slowed down considerably to avoid hitting any request limits, remove or modify the sleep() usage if you wish, but be cognizant the frequency/volume of your requests.*
+**Note - this script has been slowed a bit to avoid hitting any request limits, remove or modify the sleep() usage if you wish, but be cognizant the frequency/volume of your requests.*
 
 ## Set Up
 
