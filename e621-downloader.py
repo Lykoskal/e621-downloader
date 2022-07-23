@@ -84,25 +84,20 @@ def downloadPosts(query_string):
                     image_name = image_name[len(image_name) - 1]
                     
                     if no_overwrite == True:
-                        subprocess.Popen(['wget', wget_header, image_url, "-P", path])
+                        subprocess.Popen(['wget', wget_header, image_url, '-P', path])
                     else:
-                        subprocess.Popen(['wget', wget_header, image_url, "-O", path + image_name])
+                        subprocess.Popen(['wget', wget_header, image_url, '-O', path + image_name])
                 else:
                     if no_overwrite == True:
-                        print("You've selected no-override. Unfortunately, my Windows cmd skillz are weak, so it probably won't work.")
+                        print("You've selected no-override. Unfortunately, my Windows cmd skillz are weak, so it doesn't work.")
                         user_in = input("Would you like to continue anyway? [y/n]: ")
-                        if user_in == ['yY']:
-                            continue
-                        else:
+                        if user_in != 'y' and user_in != 'Y':
                             print('Aborted...')
                             exit()
 
                     image_name = image_url.split('/')
                     image_name = image_name[len(image_name) - 1]
-                    if no_overwrite == True:
-                        subprocess.Popen(['curl', '-A', curl_header, image_url, "-O"])
-                    else:
-                        subprocess.Popen(['curl', '-A', curl_header, image_url, "--output" + image_name])
+                    subprocess.Popen(['curl', '-A', curl_header, image_url, '-O'])
 
                 # Remember to be polite and patient, or else they might not let you in anymore
                 sleep(3.5)
