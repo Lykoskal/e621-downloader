@@ -66,7 +66,7 @@ Downloading your favorites to the current working directory while e621-downloade
 
 #### *Caveats on Windows*:
 Since Windows doesn't have wget by default and curl doesn't seem to work nicely with saving files inside directories, it unfortunately doesn't work with the optional path argument that determines where files are saved.
-As such make sure to run e621-download.py *inside the directory you want the images saved to*, unless you enjoy chaos, I guess.
+As such make sure to run e621-download.py *inside the directory you want the images saved to*... unless you enjoy chaos, I guess.
 
 ---
 
