@@ -30,7 +30,7 @@ Should help... hopefully. You might also need to install Python3 or greater (can
 
 ## Usage
 
-#### `python3 e621-downloader.py -u <username> -q <search_parameters> -p <PATH> --no_overwrite`
+`python3 e621-downloader.py -u <username> -q <search_parameters> -p <PATH> --no_overwrite`
 
 `-u, --username` &nbsp;&nbsp;&nbsp;&nbsp; Required - either your username, or the username of the user who's favorites you want to download
 
