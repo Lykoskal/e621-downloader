@@ -19,7 +19,6 @@ parser.add_argument('-p', '--path', help="specify full path for downloads; defau
 args = parser.parse_args()
 
 # Something something... globals bad... something - eh, it's a tiny script so oh well
-# Leaving these just in case you just wanna hard-code these values for convenience
 username = str(args.username).strip("[]'")
 path = str(args.path).strip("[]'")
 
