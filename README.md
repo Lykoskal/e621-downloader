@@ -76,4 +76,4 @@ Be sure you're in the same directory as e621-downloader.py, or call it with it's
 
 If using WSL, the path to places like Desktop is probably `/mnt/c/Users/YourName/Desktop`
 
-Also, I don't know this for certain, but modifying your favorites while the script is running might cus some... shenanigans
+Also, I don't know this for certain, but modifying your favorites while the script is running might cus some... shenanigans. And if you're searching on a popular page, well idk. I never said I was smart.
